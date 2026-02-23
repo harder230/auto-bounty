@@ -1,0 +1,46 @@
+.githup/workflows/main.yml
+AutoBountyAgent/
+├── .github/
+│   ├── workflows/
+│   │   ├── main.yml              # Main 30-min runner
+│   │   ├── daily-report.yml      # Daily summary
+│   │   └── weekly-audit.yml      # Weekly audit & cleanup
+│   └── scripts/
+│       └── notify.py             # Discord/Telegram notifications
+├── agents/
+│   ├── __init__.py
+│   ├── scout_agent.py            # Finds bounties
+│   ├── analyzer_agent.py         # Analyzes difficulty/reward
+│   ├── coder_agent.py            # Writes code solutions
+│   ├── pr_agent.py               # Creates PRs
+│   └── tracker_agent.py          # Tracks submissions
+├── bounty_sources/
+│   ├── __init__.py
+│   ├── gitcoin.py                # Gitcoin API integration
+│   ├── code4rena.py              # Code4rena integration
+│   ├── github_issues.py          # GitHub issues finder
+│   └── dework.py                 # Dework integration
+├── core/
+│   ├── __init__.py
+│   ├── config.py                 # Configuration management
+│   ├── llm_manager.py            # LLM (GPT-4o/Claude/Grok)
+│   ├── github_client.py          # PyGithub wrapper
+│   ├── database.py               # SQLite database
+│   └── logger.py                 # Logging setup
+├── tools/
+│   ├── __init__.py
+│   ├── code_executor.py          # Safe code execution
+│   ├── repo_cloner.py            # Git operations
+│   └── scraper.py                # Playwright scraper
+├── dashboard/
+│   ├── __init__.py
+│   ├── app.py                    # Dashboard web app
+│   └── templates/
+│       └── index.html            # Dashboard UI
+├── data/
+│   └── bounty_tracker.db        # SQLite database
+├── .env.example
+├── requirements.txt
+├── README.md
+├── app.py                        # Main entry point
+└── run_agents.py                 # Agent orchestration
